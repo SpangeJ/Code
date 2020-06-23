@@ -18,7 +18,7 @@ An emoji says more than a _1000_ words
 
 
 ### Git Large File Storage (LFS) ###
-###### Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server. If Git treats the the file as a binary file you won't see your changes, then I prefer to add it to LFS######
+###### Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server. If Git treats the the file as a binary file you won't see your changes, then I prefer to add it to LFS ######
 * .slx
 * .slxc
 * .mat
