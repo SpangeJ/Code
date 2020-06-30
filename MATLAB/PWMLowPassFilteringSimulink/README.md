@@ -13,7 +13,7 @@ Yes, number three.
 In practice, it is easier than you might think to flatten out a PWM signal. You need one resistor and one capacitor. This makes a [RC circuit](https://en.wikipedia.org/wiki/RC_circuit). Here is my result:
 ![](Images/RC-Circuit.JPG "My RC circuit to Low Pass filter a PWM Signal")
 
-But the theory behind choosing good values for the resistor, R, and the capacitor, C, is not that easy. You could of course go crazy by testing R and C values. That is what I first did. I had 5 resistors and 5 capacitors. That's 25 combinations, and none of them worked. 
+But the theory behind choosing good values for the resistor, R, and the capacitor, C, is not that easy. You could of course go crazy by testing R and C values. That is what I first did. I had 5 resistors and 5 capacitors. That's 25 combinations, and none of them worked. The values of R and C determine the two behaviors of the result. Firstly, how long it takes to converge to the mean values (3V). Secondly how much vibration, or noise, the value will oscillate between once it is there. E.G getting to 3V in 1s and staying at 3V +- 0.1V. For my application, I wanted low noise, and I did not care about the settling time (as long as it was less than a minute or so).
 
 So I dug into the theory, and it resulted in a differential equation.
 Simulink is ideal for simulation differentiation equations over time.
