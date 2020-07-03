@@ -3,8 +3,8 @@
 PWM, Pulse Width Modulation, is a common signal type used among micro-controllers. The signal has a high frequency and can be either HIGH or LOW. With an Arduino and many other micro-controllers HIGH means 5 Volt. The idea is to adjust the amount the signal is high (0-100%) pr. cycle to achieve the desired voltage. This is called the duty cycle. E.G. if you want 2.5V the 5V signal is 50% HIGH and 50% LOW pr. cycle. For an Arduino UNO, the frequency is either 490Hz or 980Hz, so it is a fast signal. Most components, e.g. a LED, would not flicker at 490Hz between max light and no light but rather settle at the average light intensity of one cycle. Think of it as the component has inertia (resistors and capacitors) and won't be able to keep up with the fast-shifting PWM signal.
 
 But What if you really needed to smooth out the signal? Well here are thee solutions:
-1) But a [Arduino DUE](https://store.arduino.cc/arduino-due)
-2) But any DAC, Digital to Analog Converter, and start soldering
+1) Buy a [Arduino DUE](https://store.arduino.cc/arduino-due)
+2) Buy any DAC, Digital to Analog Converter, and start soldering
 3) Create your own Low Pass filter to smooth out the signal.
 
 Guess what I did?

@@ -30,6 +30,7 @@ An emoji says more than a _1000_ words
 ### Gitignore ###
 ###### gitignore - Specifies intentionally untracked files to ignore ######
 * .m~
+* .asv
 * /slprj/
 
 ### Code I would like to Emphasize ###

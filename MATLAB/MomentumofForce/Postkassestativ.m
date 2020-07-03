@@ -1,31 +1,23 @@
 %% Define constants
 F               = 100;          % Force [N]
-s               = 1:0.2:2.2;    % Hekk [m]
-theta           = 24;           % Hellning hekk [Deg]
-alpha           = 0:0.1:90-theta;
+s               = 1:.25:2;    % Hekk [m]
+gamma           = 0;           % Hellning hekk [Deg]
+theta           = 90+gamma;     % [Deg]
+alpha           = 0:0.1:90-gamma-1;
 Mexcact         = zeros(length(alpha),length(s));
 h               = zeros(1,length(s));
+wire            = zeros(length(alpha),length(s));
 %%
-for i = 1:length(s)
-    %% Calculations Excact
-    wire            = s(i)*sind(theta)./(sind(alpha)*cosd(theta)+cosd(alpha)*sind(theta));
-    Mexcact(:,i)    = F*cosd(alpha+theta).*(wire.^2+s(i)^2-2*wire*s(i)).^0.5;
-    [MMax, I]       = max(Mexcact(:,i));
-    h(i)            = wire(I)^2+s(i)^2-2*wire(I)*s(i)*cosd(alpha(I));
-    %% Calculations simplified
-    Msimple         = 1/2*F*wire.*sind(2*alpha+theta);
+for j = 1:length(s)
+    Mexcact(:,j)= F*s(j).*sind(alpha);
+    [MMax, I]   = max(Mexcact(:,j));
 end
 %% Plot
-plot(alpha,Mexcact)
+plot(alpha,flip(Mexcact,2))
 xlabel('Degrees')
 ylabel('Momentum')
 grid on
 grid minor
-legend(num2str(s'))
-T = sprintf('S:%.1fm - %.1fm, h:%.1fm - %.1fm ',s(1),s(end),min(h),max(h));
+legend(num2str(flip(s')))
+T = sprintf('S:%.1fm - %.1fm ',s(1),s(end));
 title(T)
-
-%% Table of Result
-T = table(s',round(h,2)',round(max(Mexcact),2)');
-T.Properties.VariableNames = {'s','h','Momentum'};
-disp(T)
