@@ -3,11 +3,11 @@
 ###### Below I have added a sketch of the problem. The wire has to be fastened to a sloping ground lower than the foot of the Mailbox Stand. I cannot just apply Pythagoras. I needed the law of cosine or sine to create an expression of momentum that only depended on the angle of the wire. ######
 
 I made my script (Enjoy!) and plotted my result:
-![](Images/plot.JPG "Momentum plot, something wrong?")
+![](Images/plot.png "Momentum plot, something wrong?")
 
 Surely, this can't be true I thought! There has to be a trade-off between the arm and the decomposed force. Apparently not. More is better. So I sat down with pen and paper:
 
-![](Images/Sketch.JPG "The momentum applied to straighten up my Mailbox Stand")
+![](Images/sketch.JPG "Mailbox Stand sketch")
 
 Let me explain my sketch:
 alpha: that is my one variable of equation<br />

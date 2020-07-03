@@ -22,7 +22,7 @@ for kk = 4:6
     plot([round(A(kk,2)),round(A(kk,2))],[0,10],'r')
     plot([round(A(kk,3)),round(A(kk,3))],[0,10],'r')
     plot([round(A(kk,4)),round(A(kk,4))],[0,10],'r')
-    legend(num2str(kk),char(188),char(189),char(190))
+    legend(num2str(kk-1),char(188),char(189),char(190))
     title(sprintf('Lønnsfordeling %i. år etter eksamen',kk-1))
     ylabel('%')
     xlabel('Lønn [k]')
@@ -33,7 +33,7 @@ for kk = 4:6
 end
 %% Ønsket lønn i PDF
 kk=4;
-Salary = 600;
+Salary = 580;
 figure(7)
 hold on
 plot(x,PDF(:,kk))
@@ -41,7 +41,7 @@ plot([A(kk,2),A(kk,2)],[0,10],'r')
 plot([Salary,Salary],[0,10],'k')
 plot([round(A(kk,3)),round(A(kk,3))],[0,10],'r')
 plot([round(A(kk,4)),round(A(kk,4))],[0,10],'r')
-legend(num2str(kk-1),char(188),'Joa-33%',char(189),char(190))
+legend(num2str(kk-1),char(188),'~33%',char(189),char(190))
 title(sprintf('Lønnsfordeling %i. år etter eksamen',kk-1))
 ylabel('%')
 xlabel('Lønn [k]')
