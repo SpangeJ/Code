@@ -3,6 +3,7 @@
 
 ### Content ###
 * MATLAB
+	* Stock BULL and BEAR analysis
 	* BODY to NED
 	* Die Roll
 	* An Ellipses Circumference
