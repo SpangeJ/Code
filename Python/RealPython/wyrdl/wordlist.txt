@@ -1,0 +1,9 @@
+gloom
+ekans
+snake
+quake
+black
+adder
+crane
+learn
+wyrdl
