@@ -7,6 +7,10 @@ WORD_LENGTH = 5
 
 
 def get_random_word(wordlist):
+	"""Get a random word from a wordlist with length
+	>>> get_random_word(["a", "snake", "it'll"])
+	'SNAKE'
+	"""
 	return random.choice([word.upper() 
 		for word in wordlist
 		if len(word) == WORD_LENGTH and all(letter in ascii_letters for letter in word)])
