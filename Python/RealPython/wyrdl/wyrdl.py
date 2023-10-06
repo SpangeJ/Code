@@ -14,9 +14,15 @@ def get_random_word(wordlist):
 	>>> get_random_word(["a", "snake", "it'll"])
 	'SNAKE'
 	"""
-	return random.choice([word.upper() 
+	if words := [
+		word.upper() 
 		for word in wordlist
-		if len(word) == WORD_LENGTH and all(letter in ascii_letters for letter in word)])
+		if len(word) == WORD_LENGTH and all(letter in ascii_letters for letter in word)
+	]:
+		return random.choice(words)
+	else:
+		console.print(f"No words of length {WORD_LENGTH} in the word list", style="warning")
+		raise SystemExit()
 
 def show_guesses(guesses, word):
 	for guess in guesses:
@@ -48,6 +54,24 @@ def game_over(guesses, word, guessed_corectly):
 		console.print(f"[bold white on red]Sorry, the word was {word}[/]")
 
 
+def guess_word(previous_guesses):
+	guess = console.input("\nGuess word: ")
+	if guess in previous_guesses:
+		console.print(f"You have already guessed {guess}.", style="warning")
+		return guess_word(previous_guesses)
+
+	if len(guess) != WORD_LENGTH:
+		console.print(f"Your guesses must be of length {WORD_LENGTH}.", style="warning")
+		return guess_word(previous_guesses)
+	
+	if any((invalid := letter) not in ascii_letters for letter in guess):
+		console.print(
+			f"Invalid letter: {invalid}. Please use English letters", 
+			style="warning")
+		return guess_word(previous_guesses)
+	return guess
+
+
 def main():
 	# Pre-process
 	word_path = pathlib.Path(__file__).parent / "wordlist.txt"
@@ -58,7 +82,7 @@ def main():
 	for idx in range (GUESSES):
 		refresh_page(headline=f"Guess {idx + 1}")
 		show_guesses(guesses, word)
-		guesses[idx] = input(f"\nGuess word: ").upper()
+		guesses[idx] = guess_word(previous_guesses=guesses[:idx])
 		if guesses[idx] == word:
 			break
 	
