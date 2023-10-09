@@ -55,7 +55,7 @@ def game_over(guesses, word, guessed_corectly):
 
 
 def guess_word(previous_guesses):
-	guess = console.input("\nGuess word: ")
+	guess = console.input("\nGuess word: ").upper()
 	if guess in previous_guesses:
 		console.print(f"You have already guessed {guess}.", style="warning")
 		return guess_word(previous_guesses)
