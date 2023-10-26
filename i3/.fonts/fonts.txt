@@ -1,0 +1,8 @@
+fa-brands-400.ttf
+fa-solid-900.ttf
+'System San Francisco Display Bold.ttf'
+'System San Francisco Display Thin.ttf'
+fa-regular-400.ttf
+fa-v4compatibility.ttf
+'System San Francisco Display Regular.ttf'
+'System San Francisco Display Ultralight.ttf'
