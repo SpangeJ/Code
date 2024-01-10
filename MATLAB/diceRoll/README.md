@@ -12,7 +12,7 @@ This is the general expression of rolling N, S-sided dice (NdS) looks like this.
 
 ![](Images/example.png "Example")
 
-Here is a lookup table for 2-20 sided dice when you are rolling 2-20 dice.
+Here is a lookup table for 2-20 sided dice when you are rolling 2-25 dice.
 ![](./table.md)
 
 [Joachim Spange](https://www.linkedin.com/in/joachimspange/)
