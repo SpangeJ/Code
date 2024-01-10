@@ -21,5 +21,5 @@ for n in range(2, N+1):
 table_markdown = tabulate(Table, headers, tablefmt='github')
 
 # Save the table_markdown to table.md
-with open('table.md', 'w') as file:
+with open('markdown/table.md', 'w') as file:
     file.write(table_markdown)
