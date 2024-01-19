@@ -12,7 +12,6 @@ This is the general expression of rolling N, S-sided dice (NdS) looks like this.
 
 ![](Images/example.png "Example")
 
-Here is a lookup table for 2-20 sided dice when you are rolling 2-25 dice (numbers in %).
-![](markdown/table.md "How bad luck did you really have?")
+[Here](markdown/table.md) is a lookup table for 2-20 sided dice when you are rolling 2-25 dice (numbers in %).
 
 [Joachim Spange](https://www.linkedin.com/in/joachimspange/)
