@@ -5,7 +5,22 @@
 	"context": "..",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-	"dockerFile": "Dockerfile"
+	"dockerFile": "Dockerfile",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jeff-hykin.better-cpp-syntax",
+				"marus25.cortex-debug",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.makefile-tools",
+				"ms-vscode.cpptools-extension-pack",
+				"mcu-debug.debug-tracker-vscode",
+				"mcu-debug.peripheral-viewer",
+				"trond-snekvik.gnu-mapfiles",
+				"ms-vscode.hexeditor"
+			]
+		}
+	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

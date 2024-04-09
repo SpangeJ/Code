@@ -17,6 +17,9 @@ RUN apt-get install \
     pkg-config \
     tclsh \
     telnet \
+    unzip \
+    zenity \
+    libncurses5\
     -y
 
 
@@ -35,6 +38,14 @@ RUN git clone https://github.com/openocd-org/openocd.git \
     && make install-strip \
     && cd .. \
     && rm -rf openocd
+
+# Install CubeCLT
+# Download from my own Google Drive, bause ST won't allow wget download
+RUN wget wget --no-check-certificate 'https://drive.usercontent.google.com/download?id=1yc4HVDBCQRN71aGGYeCx6OMg8Rkwuxpe&export=download&confirm=t&uuid=b4873ee7-34e3-4df1-966c-474ee172ca22' -r -A 'uc*' -e robots=off -nd -O cubeclt.sh.zip
+RUN unzip cubeclt.sh.zip
+RUN chmod +x st-stm32cubeclt_1.15.0_20695_20240315_1429_amd64.sh
+RUN yes | ./st-stm32cubeclt_1.15.0_20695_20240315_1429_amd64.sh --quiet --nox11
+RUN mv makeself_dir_ww3tyB/y/ /home/cubeCLT
 
 
 CMD bin/bash
