@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/workspaces/cmake-stm32/build",
+  "command": "/usr/local/bin/arm-none-eabi-gcc --sysroot=/usr/local/arm-none-eabi -DSTM32F4 -DSTM32F407xx -I/workspaces/cmake-stm32/include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include -g -mthumb -Wall -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard --specs=nosys.specs -o CMakeFiles/cmake-stm32.dir/src/main.c.obj -c /workspaces/cmake-stm32/src/main.c",
+  "file": "/workspaces/cmake-stm32/src/main.c"
+},
+{
+  "directory": "/workspaces/cmake-stm32/build",
+  "command": "/usr/local/bin/arm-none-eabi-gcc --sysroot=/usr/local/arm-none-eabi -DSTM32F4 -DSTM32F407xx -I/workspaces/cmake-stm32/include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include -g -mthumb -Wall -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard --specs=nosys.specs -o CMakeFiles/cmake-stm32.dir/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s.obj -c /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s",
+  "file": "/workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s"
+},
+{
+  "directory": "/workspaces/cmake-stm32/build",
+  "command": "/usr/local/bin/arm-none-eabi-gcc --sysroot=/usr/local/arm-none-eabi -DSTM32F4 -DSTM32F407xx -I/workspaces/cmake-stm32/include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Include -isystem /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include -g -mthumb -Wall -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard --specs=nosys.specs -o CMakeFiles/cmake-stm32.dir/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c.obj -c /workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c",
+  "file": "/workspaces/cmake-stm32/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
+}
+]

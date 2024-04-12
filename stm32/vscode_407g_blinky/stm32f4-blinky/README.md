@@ -12,4 +12,8 @@ _cmake --build ._
 
 Open _launch.json_  
 Edit:  
-_"executable":_  to point to: _"${workspaceFolder}/build/{filename}.elf"
+_"executable":_  to point to: _"${workspaceFolder}/build/${workspaceFolderBasename}.elf"
+
+## SVD-file
+
+download [STM32F407.svd](https://github.com/reportingsjr/stm32f407x/blob/master/STM32F407.svd) and add it to the __debug-files__ folder
