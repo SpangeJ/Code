@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "STM32F4_Blinky_Devcontainer",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F407xx"
+            ],
+            "compilerPath": "/usr/local/bin/arm-none-eabi-g++",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-arm",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            // "configurationProvider": "ms-vscode.cmake-tools",
+            "compilerArgs": [
+                "-mcpu=cortex-m4",
+                "-mthumb"
+            ]
+        }
+    ],
+    "version": 4
+}
