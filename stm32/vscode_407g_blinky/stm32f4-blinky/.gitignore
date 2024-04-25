@@ -1,4 +1,0 @@
-!build/
-build/*
-!build/compile_commands.json
-*.svd
