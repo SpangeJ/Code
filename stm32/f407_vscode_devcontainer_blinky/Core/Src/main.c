@@ -119,7 +119,6 @@ int main(void)
 
     if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) != GPIO_PIN_RESET){
       HAL_Delay(150);
-      HAL_UART_Transmit(&huart2, (uint8_t *)message, strlen(message), 100);
     }
     /* USER CODE END WHILE */
     MX_USB_HOST_Process();
