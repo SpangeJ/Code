@@ -1,16 +1,19 @@
 # wyrdl.py
+import contextlib
 import pathlib
 import random
-from string import ascii_letters
+from string import ascii_letters, ascii_uppercase
 from rich.console import Console
 from rich.theme import Theme
+
 GUESSES = 6
 WORD_LENGTH = 5
+WORDS_PATH = pathlib.Path(__file__).parent / "wordlist.txt"
 console = Console(width=40, theme=Theme({"warning": "red on yellow"}))
 
 
 def get_random_word(wordlist):
-	"""Get a random word from a wordlist with length
+	"""Get a random word from a wordlist with length WORD_LENGTH
 	>>> get_random_word(["a", "snake", "it'll"])
 	'SNAKE'
 	"""
@@ -25,6 +28,7 @@ def get_random_word(wordlist):
 		raise SystemExit()
 
 def show_guesses(guesses, word):
+	letter_status = {letter: letter for letter in ascii_uppercase}
 	for guess in guesses:
 		styled_guess = []
 		for letter, correct in zip(guess, word):
@@ -37,7 +41,10 @@ def show_guesses(guesses, word):
 			else:
 				style = "dim"
 			styled_guess.append(f"[{style}]{letter}[/]")
+			if letter != "_":
+				letter_status[letter] = f"[{style}]{letter}[/]"
 		console.print("".join(styled_guess), justify="center")
+	console.print("\n" + "".join(letter_status.values()), justify="center")
 
 
 def refresh_page(headline):
@@ -63,7 +70,7 @@ def guess_word(previous_guesses):
 	if len(guess) != WORD_LENGTH:
 		console.print(f"Your guesses must be of length {WORD_LENGTH}.", style="warning")
 		return guess_word(previous_guesses)
-	
+
 	if any((invalid := letter) not in ascii_letters for letter in guess):
 		console.print(
 			f"Invalid letter: {invalid}. Please use English letters", 
@@ -74,18 +81,18 @@ def guess_word(previous_guesses):
 
 def main():
 	# Pre-process
-	word_path = pathlib.Path(__file__).parent / "wordlist.txt"
-	word = get_random_word(word_path.read_text(encoding="utf-8").split("\n"))
+	word = get_random_word(WORDS_PATH.read_text(encoding="utf-8").split("\n"))
 	guesses = ["_" * WORD_LENGTH] * GUESSES
 
-	# Process (main loop)
-	for idx in range (GUESSES):
-		refresh_page(headline=f"Guess {idx + 1}")
-		show_guesses(guesses, word)
-		guesses[idx] = guess_word(previous_guesses=guesses[:idx])
-		if guesses[idx] == word:
-			break
-	
+	with contextlib.suppress(KeyboardInterrupt):
+		# Process (main loop)
+		for idx in range (GUESSES):
+			refresh_page(headline=f"Guess {idx + 1}")
+			show_guesses(guesses, word)
+			guesses[idx] = guess_word(previous_guesses=guesses[:idx])
+			if guesses[idx] == word:
+				break
+
 	# Post-process
 	game_over(guesses, word, guessed_corectly=guesses[idx] == word)
 
