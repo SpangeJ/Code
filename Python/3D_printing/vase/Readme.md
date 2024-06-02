@@ -16,28 +16,6 @@ My steps for creating this vase were the following analogy:
 1. Create a cone from $z = z_{min}$ to $z = z_{max}$ where $r = a * z + b$.
 2. Add waves to the radius by making it dependent on both the angle and z, creating an irregular shape.
 
-## Required Modules
-
-First, let us import all the modules we need:
-1. `axes3d` from `mpl_toolkits` (part of matplotlib) to visualize.
-2. `pyplot` from `matplotlib` also to visualize.
-3. `measure` from `skimage` to generate the vertices and faces from the marching cubes algorithm, in order to generate the STL file.
-4. `mesh` from `stl` to generate the 3D object from the vertices and faces.
-5. `numpy` because it is numerical Python we are doing here.
-6. `time` and `datetime` are not necessary but might be useful to predict/track the time consumption if you set a really high resolution.
-
-Here's the Python code to import the necessary modules:
-
-```python
-from mpl_toolkits.mplot3d import axes3d
-import matplotlib.pyplot as plt
-from skimage import measure
-from stl import mesh
-import numpy as np
-import time
-import datetime
-```
-
 ## Generating the Vase
 
 To create the vase, follow these steps:
@@ -104,3 +82,8 @@ ax.plot_surface(x, y, z, rstride=5, cstride=5, color='b', alpha=0.6, linewidth=0
 plt.show()
 
 ```
+
+## Further Reading
+
+To see different methods of generating the vase have a look at [vase.ipynb](vase.ipynb)  
+The code in til README along with neccesarry imports is found at [Readme_code.ipynb](Readme_code.ipynb)  
