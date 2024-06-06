@@ -1,6 +1,6 @@
 # README #
 
-If I'm curious about something I might code the problem and plot the result to see how it all works. Feel free to use any of my code if it could help you by any means
+If I am curious about something I might code the problem and plot the result to see how it all works. Feel free to use any of my code if it could help you by any means
 
 ## Content ##
 
